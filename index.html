@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Movertize</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	
+	<div id="navi-bar">
+		<div id="left"><div id="logo"></div></div>
+		<div id="right"><div class="btn" id="menu" hidden></div><div class="btn" id="back" hidden></div></div>
+	</div>
+	<div id="main">
+		
+		<div class="canvas" id="map-canvas"></div>
+		<div class="canvas" id="menu-canvas">
+			<table id="tbl-menu">
+				
+				<tr>
+				<td style="width:50%">Radius:</td>
+				<td>
+				
+				<form id='myform' method='POST' action='#'>
+   				<input type='button' value='-' class='qtyminus' field='quantity' />
+    			<input type='text' name='quantity' value='100' class='qty' disabled />
+    			<input type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+				
+				</td></tr>
+				<tr><td colspan="2">Filter:
+				
+						<form name="form1" method="post" action="">
+							<table id="filters">
+							<tr><td>
+								<label>
+									<input type="checkbox" name="CheckboxGroup1" value="coffee-tea" id="CheckboxGroup1_0">
+									Coffee or Tea</label>
+								</td>
+								<td>
+								<label>
+									<input type="checkbox" name="CheckboxGroup1" value="restaurant" id="CheckboxGroup1_1">
+									Restaurant</label>
+							</td></tr>
+							<tr><td>
+								<label>
+									<input type="checkbox" name="CheckboxGroup1" value="bargrill" id="CheckboxGroup1_2">
+									Bar or Grill</label>
+								</td>
+								<td>
+								<label>
+									<input type="checkbox" name="CheckboxGroup1" value="store" id="CheckboxGroup1_3">
+									Stores</label>
+							</td></tr>
+							<tr><td>
+								<label>
+									<input type="checkbox" name="CheckboxGroup1" value="hotels" id="CheckboxGroup1_4">
+									Hotel</label>
+								</td>
+								<td>
+								<label>
+									<input type="checkbox" name="CheckboxGroup1" value="hospital" id="CheckboxGroup1_5">
+									Hospital</label>
+							</td></tr>
+							<tr><td>
+								<label>
+									<input type="checkbox" name="CheckboxGroup1" value="school" id="CheckboxGroup1_6">
+									School</label>
+								</td>
+								<td>
+								<label>
+									<input type="checkbox" name="CheckboxGroup1" value="computers" id="CheckboxGroup1_7">
+									Computers</label>
+							</td></tr>
+						</table>	
+						
+				</form>
+				</td></tr>
+				<tr><td colspan="2">
+					<select name="search-category" id="listbox">
+							<option value="">Search by Category</option>
+							<option value="coffee-tea">Coffee/Tea</option>
+							<option value="restaurant">Restaurant</option>
+							<option value="bar-grill">Bar/Grill</option>
+							<option value="store">Convenience Store/Supermarket</option>
+							<option value="hotel">Hotel</option>
+							<option value="hospital">Hospital</option>
+							<option value="school">School</option>
+							<option value="computer">Computer</option>
+						</select>
+					<button id="search-button">1</button>
+					
+				</td></tr>
+			</table>
+		</div>
+		
+		<div class="canvas" id="info-canvas">
+			<table id="tbl-info"></table>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXuX8D9cHsfSOBoeWltKbQB4a5s_CRP_8&sensor=true&region=PH"></script>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

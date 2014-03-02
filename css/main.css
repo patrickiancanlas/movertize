@@ -1,0 +1,46 @@
+html {height:100%;width:100%}
+body {height:100%;margin:0;padding:0;font-family:'Open Sans',sans-serif;color:#597291}
+#main{height:85%; width:100%}
+
+#map-canvas{height:100%; width:100%}
+#menu-canvas{height:95%; width:92%;background:#fff;padding:3%}
+#menu-canvas table{height:50%;border:none;border-collapse:collapse}
+#menu-canvas td{width:100%;}
+#navi-bar{height:12%;width:auto;padding:2%;background-image:url(../img/bg-header.png);background-size:contain; display:block}
+#logo{float:left;height:100%;width:100%;background-image:url(../img/logo.png);background-size:contain; background-repeat:no-repeat}
+#logo img{max-width:100%;float:left}
+#back{height:100%;width:40%;background-image:url(../img/icon-back.png);background-size:contain; background-repeat:no-repeat; background-position:right;float:right;cursor:pointer}
+#menu{height:100%;width:40%;background-image:url(../img/icon-menu.png);background-size:contain; background-repeat:no-repeat; background-position:right;float:right;cursor:pointer}
+#settings{height:100%;width:40%;background-image:url(../img/icon-settings.png);background-size:contain; background-repeat:no-repeat; background-position:right;float:right;cursor:pointer}
+#list{height:100%;width:40%;background-image:url(../img/icon-list.png);background-size:contain; background-repeat:no-repeat; background-position:right;float:right;cursor:pointer;margin-right:4%;}
+#search{height:100%;width:40%;background-image:url(../img/icon-search.png);background-size:contain; background-repeat:no-repeat; background-position:right;float:right;cursor:pointer;margin-right:4%;}
+#settings img{max-width:100%;cursor:pointer;float:right}
+#left{height:100%;width:70%;float:left;}
+#right{height:100%;width:30%;float:left;}
+#tbl-menu tr{padding-bottom:1em}
+
+.qty {
+    width: 35px;
+    height: 25px;
+    text-align: center;
+	border:solid #999 1px;
+	border-radius:3px;
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
+#filters{width:100%;border-collapse:collapse}
+#filters td{width:5%}
+#listbox{width:220px; height:30px;padding:5px; border: 1px #999 solid; border-radius:3px;font-size:.8em}
+#search-button{background:url(../img/search-button.png);border:0;border-radius:2px;width:30px;height:30px;color:transparent;cursor:pointer}
+
+.infowindow { min-height:20px; min-width:40px;background: }
+<<<<<<< HEAD
+#tbl-info{width:100%}
+#tbl-info td,th{padding:1%;left:0px;text-align:left}
+#tbl-info thead{font-size:2.0em;background: #D8D8D8;color: #4AA6F0}
+=======
+#tbl-info{width:100%;border-collapse:collapse}
+#tbl-info td,th{padding:1%;left:0px;text-align:left}
+#tbl-info thead{font-size:2.0em;background: #80BFFF;color: #4AA6F0;color:#3275AB}
+#tbl-info tbody{border-bottom:dashed 1px #999999;background:#B9DAFF;padding-bottom:20px}
+>>>>>>> e791e2096a86a8fe800b58da08996a386ae0d3bd

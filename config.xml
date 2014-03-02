@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.movertize"
+        version   = "1.0.0">
+
+    <name>Movertize</name>
+    
+    <preference name="phonegap-version" value="3.1.0" />
+
+    <gap:platform name="android" />
+
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    
+    <access origin="*"/>
+    <access origin="http://www.cloudify-phil.com" subdomains="true" browserOnly="false" />
+    <access origin="https://www.cloudify-phil.com" subdomains="true" browserOnly="false" />
+    <access origin="http://gstatic.com" subdomains="true" browserOnly="false" />
+    <access origin="https://gstatic.com" subdomains="true" browserOnly="false" />
+    <access origin="http://googleapis.com" subdomains="true" browserOnly="false" />
+    <access origin="https://googleapis.com" subdomains="true" browserOnly="false" />
+    <access origin="http://google.com" subdomains="true" browserOnly="false" />
+    <access origin="https://google.com" subdomains="true" browserOnly="false" />
+</widget>
