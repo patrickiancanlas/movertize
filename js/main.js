@@ -201,7 +201,7 @@ function locationInfo(id){
 		async:true,
 		
 		success:function(data){
-			$('#tbl-info').append('<thead><tr><th>'+data[0].name+'</th></tr></thead>');
+			$('#tbl-info').append('<thead><tr><td><img class="bus-logo" src="http://www.cloudify-phil.com/movertize/webroot/img/0003.jpg" draggable="false" /></td><th>'+data[0].name+'</th></tr></thead>');
 		}
 	});
 	
@@ -214,7 +214,7 @@ function locationInfo(id){
 		
 		success:function(data){
 			for(a=0;p=data[a];a++){
-				var h='<tbody><tr><th>'+p.title+'</th><tr><td>'+p.content+'</td></tr></tbody>';
+				var h='<tbody><tr><td></td><th>'+p.title+'</th><tr><td></td><td>'+p.content+'</td></tr></tbody>';
 				$('#tbl-info').append(h);
 			}
 		}

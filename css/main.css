@@ -1,5 +1,10 @@
+@font-face{
+	font-family: OpenSans;
+	src: url(http://www.cloudify-phil.com/movertize/OpenSans-Regular.ttf);
+}
+
 html {height:100%;width:100%}
-body {height:100%;margin:0;padding:0;font-family:'Open Sans',sans-serif;color:#597291}
+body {height:100%;margin:0;padding:0;font-family:OpenSans,sans-serif;color:#597291}
 #main{height:85%; width:100%}
 
 #map-canvas{height:100%; width:100%}
@@ -34,11 +39,13 @@ input.qtyminus { width:25px; height:25px;}
 #search-button{background:url(../img/search-button.png);border:0;border-radius:2px;width:30px;height:30px;color:transparent;cursor:pointer}
 
 .infowindow { min-height:20px; min-width:40px;background: }
-#tbl-info{width:100%}
+#tbl-info{width:100%;margin:0; border-collapse:collapse;}
 #tbl-info td,th{padding:1%;left:0px;text-align:left}
-#tbl-info thead{font-size:2.0em;background: #D8D8D8;color: #4AA6F0}
+#tbl-info thead{font-family:OpenSans;font-size:2.0em;background: #D8D8D8;color: #4AA6F0}
 =======
 #tbl-info{width:100%;border-collapse:collapse}
 #tbl-info td,th{padding:1%;left:0px;text-align:left}
 #tbl-info thead{font-size:2.0em;background: #80BFFF;color: #4AA6F0;color:#3275AB}
 #tbl-info tbody{border-bottom:dashed 1px #999999;background:#B9DAFF;padding-bottom:20px}
+
+.bus-logo{max-width:60px;}
