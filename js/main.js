@@ -154,8 +154,8 @@ function locationList(myLoc){
 	markers = [];
 	$.ajax({
 		type:'post',
-//		url:'http://www.cloudify-phil.com/movertize/stream',
-		url:'http://localhost/movertize/stream',
+		url:'http://www.cloudify-phil.com/movertize/stream',
+//		url:'http://localhost/movertize/stream',
 		data:{r:'get_locations',d:inp},
 		async:true,
 		
@@ -195,8 +195,8 @@ function locationInfo(id){
 
 	$.ajax({
 		type:'post',
-//		url:'http://www.cloudify-phil.com/movertize/stream',
-		url:'http://localhost/movertize/stream',
+		url:'http://www.cloudify-phil.com/movertize/stream',
+//		url:'http://localhost/movertize/stream',
 		data:{r:'location_info',d:id},
 		async:true,
 		
@@ -207,8 +207,8 @@ function locationInfo(id){
 	
 	$.ajax({
 		type:'post',
-//		url:'http://www.cloudify-phil.com/movertize/stream',
-		url:'http://localhost/movertize/stream',
+		url:'http://www.cloudify-phil.com/movertize/stream',
+//		url:'http://localhost/movertize/stream',
 		data:{r:'get_ads',d:id},
 		async:true,
 		
