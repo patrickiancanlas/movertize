@@ -62,9 +62,9 @@ function initialize(){
     });
 }
 
+//fetch map
 function initMap(){
-//initialize map	
-	map = new google.maps.Map(document.getElementById('map-canvas'), {
+	var opt = {
 		zoom: 13,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		streetViewControl: false,
@@ -72,32 +72,12 @@ function initMap(){
 		zoomControlOptions: {
 			position: google.maps.ControlPosition.RIGHT_TOP
 		}
-	});
+	}
 
-//initialize current location marker
-	curLocMrk=new google.maps.Marker({
-		map: map,
-		icon:  'img/curLocMrk.png',
-	});
-
-	google.maps.event.addListener(curLocMrk, 'click', function() {
-		var infowindow = new google.maps.InfoWindow({
-			content: ('<div class="infowindow"><h4>You are here!</h4></div>')
-			});
-		infowindow.open(map, curLocMrk);
-	});
-
-//initialize MBR
-	radius = new google.maps.Rectangle({
-		strokeColor: '#82CAFF',
-		strokeOpacity: 1,
-		strokeWeight: 1,
-		fillColor: '#82CAFF',
-		fillOpacity: 0.2,
-		map: map
-	});
+	map = new google.maps.Map(document.getElementById('map-canvas'), opt);
 }
 
+//fetch position
 function initGPS(){
 	var opt = {
 		enableHighAccuracy: true,
@@ -112,21 +92,37 @@ function initGPS(){
 		alert("Location detection is not supported on this device.");
 }
 
+//show current position on the map
 function curLoc(position){
-	myLoc = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+	myLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 //	myLoc = new google.maps.LatLng(15.157916,120.593753);
 	map.setCenter(myLoc);
+	
+	initOverlays();
 	curLocMrk.setPosition(myLoc);
-	mbr(myLoc);
-	locationList(myLoc);
+	mbr();
+	locationList();
 }
 
-function movLoc(position){
-	curLocMrk.setPosition(myLoc);
-//	mbr(myLoc);	
+//initialize current marker and rectangle
+function initOverlays(){
+	curLocMrk = new google.maps.Marker({
+		map: map,
+		icon:  'img/curLocMrk.png',
+	});
+	
+	radius = new google.maps.Rectangle({
+		strokeColor: '#82CAFF',
+		strokeOpacity: 1,
+		strokeWeight: 1,
+		fillColor: '#82CAFF',
+		fillOpacity: 0.2,
+		map: map
+	});
 }
 
-function mbr(myLoc){
+//calculate bounding rectangle
+function mbr(){
 	var lat = myLoc.lat();
 	var lng = myLoc.lng();
 	var degrad = Math.PI / 180;
@@ -143,7 +139,8 @@ function mbr(myLoc){
 	map.fitBounds(bnds);
 }
 
-function locationList(myLoc){
+//show locations inside the rectangle
+function locationList(){
 	var inp=[];
 	inp.push(myLoc.lat());
 	inp.push(myLoc.lng());
@@ -189,6 +186,7 @@ function locationList(myLoc){
 	});
 }
 
+//once location clicked, will show location info
 function locationInfo(id){
 	$('.canvas').hide();
 	$('#tbl-info').empty();
@@ -223,6 +221,7 @@ function locationInfo(id){
 	$('#info-canvas').show();
 }
 
+//position detection errors
 function showError(error){
 	switch(error.code) 
 	{

@@ -7,7 +7,7 @@ html {height:100%;width:100%}
 body {height:100%;margin:0;padding:0;font-family:OpenSans,sans-serif;color:#597291}
 #main{height:85%; width:100%}
 
-#map-canvas{height:100%; width:100%}
+#map-canvas{height:100%; width:100%; display:block; position:relative;}
 #menu-canvas{height:95%; width:92%;background:#fff;padding:3%}
 #menu-canvas table{height:50%;border:none;border-collapse:collapse}
 #menu-canvas td{width:100%;}
