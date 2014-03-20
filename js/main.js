@@ -18,6 +18,7 @@ function initialize(){
 	
 //initialize functions
 	initMap();
+	initOverlays();
 	initGPS();
 
 //initialize listeners
@@ -77,6 +78,23 @@ function initMap(){
 	map = new google.maps.Map(document.getElementById('map-canvas'), opt);
 }
 
+//initialize current marker and rectangle
+function initOverlays(){
+	curLocMrk = new google.maps.Marker({
+		map: map,
+		icon:  'img/curLocMrk.png',
+	});
+	
+	radius = new google.maps.Rectangle({
+		strokeColor: '#82CAFF',
+		strokeOpacity: 1,
+		strokeWeight: 1,
+		fillColor: '#82CAFF',
+		fillOpacity: 0.2,
+		map: map
+	});
+}
+
 //fetch position
 function initGPS(){
 	var opt = {
@@ -97,29 +115,11 @@ function curLoc(position){
 	myLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 //	myLoc = new google.maps.LatLng(15.157916,120.593753);
 	map.setCenter(myLoc);
-	
-	initOverlays();
 	curLocMrk.setPosition(myLoc);
 	mbr();
 	locationList();
 }
 
-//initialize current marker and rectangle
-function initOverlays(){
-	curLocMrk = new google.maps.Marker({
-		map: map,
-		icon:  'img/curLocMrk.png',
-	});
-	
-	radius = new google.maps.Rectangle({
-		strokeColor: '#82CAFF',
-		strokeOpacity: 1,
-		strokeWeight: 1,
-		fillColor: '#82CAFF',
-		fillOpacity: 0.2,
-		map: map
-	});
-}
 
 //calculate bounding rectangle
 function mbr(){
