@@ -104,22 +104,43 @@ function initGPS(){
 	
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(curLoc, showError, opt);
-//		navigator.geolocation.watchPosition(movLoc, showError, opt);
+		navigator.geolocation.watchPosition(movLoc, showError, opt);
 	}
 	else
 		alert("Location detection is not supported on this device.");
 }
 
 //show current position on the map
-function curLoc(position){
-	myLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-//	myLoc = new google.maps.LatLng(15.157916,120.593753);
+function curLoc(curPos){
+	myLoc = new google.maps.LatLng(curPos.coords.latitude, curPos.coords.longitude);
 	map.setCenter(myLoc);
 	curLocMrk.setPosition(myLoc);
 	mbr();
 	locationList();
 }
 
+//if position changes, update
+function movLoc(newPos){
+	var newLoc = new google.maps.LatLng(newPos.coords.latitude, newPos.coords.longitude);
+	var lat1 = myLoc.lat();
+	var lng1 = myLoc.lng();
+	var lat2 = newLoc.lat();
+	var lng2 = newLoc.lng();
+	var dLat = ((lat2 - lat1) * (Math.PI / 180));
+	var dLng = ((lng2 - lng1) * (Math.PI / 180));
+	var tLat = ((lat1 + lat2) * (Math.PI / 180));
+	
+	var R = 6371;
+	var x = dLng * Math.cos(tLat/2);
+	var y = dLat;
+	var d = Math.sqrt(x*x + y*y) * R * 1000;
+	
+	if(d > 100){
+		myLoc = newLoc;
+		curLoc(newPos);
+		return;
+	}
+}
 
 //calculate bounding rectangle
 function mbr(){
