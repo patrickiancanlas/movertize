@@ -9,6 +9,7 @@ function initialize(){
 //initialize variables
 	bool=true;
 	dist=0.1;
+	filter=0;
 
 //hide div
 	$('.btn').hide();
@@ -31,6 +32,7 @@ function initialize(){
 	});
 	
 	$('#back').off().on('click',function(){
+		filter = $('#filter').val();
 		$('.btn').hide();
 		$('.canvas').hide();
 		$('#menu').show();
@@ -169,6 +171,7 @@ function locationList(){
 	inp.push(myLoc.lat());
 	inp.push(myLoc.lng());
 	inp.push(dist);
+	inp.push(filter);
 	
 	var marker=null;
 	var markers=null;
