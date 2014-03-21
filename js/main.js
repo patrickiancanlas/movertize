@@ -226,7 +226,7 @@ function locationInfo(id){
 		async:true,
 		
 		success:function(data){
-			$('#tbl-info').append('<thead><tr><td><img class="bus-logo" src="http://www.cloudify-phil.com/movertize/webroot/img/0003.jpg" draggable="false" /></td><th>'+data[0].name+'</th></tr></thead>');
+			$('#tbl-info').append('<thead><tr><th>'+data[0].name+'</th></tr></thead>');
 		}
 	});
 	
