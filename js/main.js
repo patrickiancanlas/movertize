@@ -27,6 +27,7 @@ function initialize(){
 		$('.canvas').hide();
 		$('#back').show();
 		$('#menu-canvas').show();
+		stopWatch();
 	});
 	
 	$('#back').off().on('click',function(){
@@ -35,6 +36,7 @@ function initialize(){
 		$('#menu').show();
 		$('#map-canvas').empty().show();
 		initMap();
+		initOverlays();
 		initGPS();
 	});
 
@@ -103,8 +105,9 @@ function initGPS(){
 	}
 	
 	if(navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(curLoc, showError, opt);
-		navigator.geolocation.watchPosition(movLoc, showError, opt);
+		geoLoc = navigator.geolocation;
+		geoLoc.getCurrentPosition(curLoc, showError, opt);
+		watchID = geoLoc.watchPosition(movLoc, showError, opt);
 	}
 	else
 		alert("Location detection is not supported on this device.");
@@ -240,6 +243,10 @@ function locationInfo(id){
 	});
 	
 	$('#info-canvas').show();
+}
+
+function stopWatch(){
+	geoLoc.clearWatch(watchID);
 }
 
 //position detection errors
