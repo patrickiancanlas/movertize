@@ -28,7 +28,7 @@ function initialize(){
 		$('.canvas').hide();
 		$('#back').show();
 		$('#menu-canvas').show();
-		stopWatch();
+		//stopWatch();
 	});
 	
 	$('#back').off().on('click',function(){
@@ -139,13 +139,13 @@ function movLoc(newPos){
 	var x = dLng * Math.cos(tLat/2);
 	var y = dLat;
 	var d = Math.sqrt(x*x + y*y) * R * 1000;
-	
+/*	
 	if(d > 100){
 		myLoc = newLoc;
 		curLoc(newPos);
 		return;
 	}
-}
+*/}
 
 //calculate bounding rectangle
 function mbr(){

@@ -47,5 +47,3 @@ input.qtyminus { width:25px; height:25px;}
 #tbl-info td,th{padding:1%;left:0px;text-align:left}
 #tbl-info thead{font-size:2.0em;background: #80BFFF;color: #4AA6F0;color:#3275AB}
 #tbl-info tbody{border-bottom:dashed 1px #999999;background:#B9DAFF;padding-bottom:20px}
-
-.bus-logo{max-width:60px;}
