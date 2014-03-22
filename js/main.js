@@ -118,6 +118,8 @@ function initGPS(){
 //
 function curLoc(curPos){
 	changeLoc(curPos);
+	map.setCenter(myLoc);
+	mbr();
 	locationList();
 }
 
@@ -141,6 +143,8 @@ function movLoc(newPos){
 	changeLoc(newPos);
 	
 	if(d > 100){
+		map.setCenter(myLoc);
+		mbr();
 		locationList();
 		return;
 	}
@@ -149,9 +153,7 @@ function movLoc(newPos){
 //show current position on the map
 function changeLoc(curPos){
 	myLoc = new google.maps.LatLng(curPos.coords.latitude, curPos.coords.longitude);
-	map.setCenter(myLoc);
 	curLocMrk.setPosition(myLoc);
-	mbr();
 }
 
 //calculate bounding rectangle
