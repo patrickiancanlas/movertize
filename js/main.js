@@ -139,6 +139,9 @@ function movLoc(newPos){
 	var x = dLng * Math.cos(tLat/2);
 	var y = dLat;
 	var d = Math.sqrt(x*x + y*y) * R * 1000;
+
+	myLoc = newLoc;
+	curLoc(newPos);
 /*	
 	if(d > 100){
 		myLoc = newLoc;
