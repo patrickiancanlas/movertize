@@ -115,12 +115,9 @@ function initGPS(){
 		alert("Location detection is not supported on this device.");
 }
 
-//show current position on the map
+//
 function curLoc(curPos){
-	myLoc = new google.maps.LatLng(curPos.coords.latitude, curPos.coords.longitude);
-	map.setCenter(myLoc);
-	curLocMrk.setPosition(myLoc);
-	mbr();
+	changeLoc(curPos);
 	locationList();
 }
 
@@ -141,14 +138,21 @@ function movLoc(newPos){
 	var d = Math.sqrt(x*x + y*y) * R * 1000;
 
 	myLoc = newLoc;
-	curLoc(newPos);
-/*	
+	changeLoc(newPos);
+	
 	if(d > 100){
-		myLoc = newLoc;
-		curLoc(newPos);
+		locationList();
 		return;
 	}
-*/}
+}
+
+//show current position on the map
+function changeLoc(curPos){
+	myLoc = new google.maps.LatLng(curPos.coords.latitude, curPos.coords.longitude);
+	map.setCenter(myLoc);
+	curLocMrk.setPosition(myLoc);
+	mbr();
+}
 
 //calculate bounding rectangle
 function mbr(){
