@@ -170,7 +170,7 @@ function mbr(){
 	bnds.extend(new google.maps.LatLng(lat2, lng2));
 
 	radius.setBounds(bnds);
-//	map.fitBounds(bnds);
+	map.fitBounds(bnds);
 }
 
 //show locations inside the rectangle
