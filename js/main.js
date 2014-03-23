@@ -143,6 +143,7 @@ function movLoc(newPos){
 	
 	if(d > 100){
 		map.setCenter(myLoc);
+		mbr();
 		locationList();
 		return;
 	}
@@ -152,7 +153,6 @@ function movLoc(newPos){
 function changeLoc(curPos){
 	myLoc = new google.maps.LatLng(curPos.coords.latitude, curPos.coords.longitude);
 	curLocMrk.setPosition(myLoc);
-	mbr();
 }
 
 //calculate bounding rectangle
