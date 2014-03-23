@@ -119,6 +119,7 @@ function initGPS(){
 function curLoc(curPos){
 	changeLoc(curPos);
 	map.setCenter(myLoc);
+	mbr();
 	locationList();
 }
 
