@@ -119,7 +119,6 @@ function initGPS(){
 function curLoc(curPos){
 	changeLoc(curPos);
 	map.setCenter(myLoc);
-	mbr();
 	locationList();
 }
 
@@ -144,7 +143,6 @@ function movLoc(newPos){
 	
 	if(d > 100){
 		map.setCenter(myLoc);
-		mbr();
 		locationList();
 		return;
 	}
@@ -154,6 +152,7 @@ function movLoc(newPos){
 function changeLoc(curPos){
 	myLoc = new google.maps.LatLng(curPos.coords.latitude, curPos.coords.longitude);
 	curLocMrk.setPosition(myLoc);
+	mbr();
 }
 
 //calculate bounding rectangle
@@ -171,7 +170,7 @@ function mbr(){
 	bnds.extend(new google.maps.LatLng(lat2, lng2));
 
 	radius.setBounds(bnds);
-	map.fitBounds(bnds);
+//	map.fitBounds(bnds);
 }
 
 //show locations inside the rectangle
